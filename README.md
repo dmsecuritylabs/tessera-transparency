@@ -6,9 +6,8 @@ CYM500 Cyber Security Project (University of London, MSc Cybersecurity)
 ## What this is
 
 This is the in-progress prototype implementation supporting Chapter 4
-(Implementation) of the dissertation. It uses the real, current
-`github.com/transparency-dev/tessera` v1.0.2 library (not a mock or
-simulation) against a local POSIX-backed log.
+(Implementation) of the dissertation. It uses 
+`github.com/transparency-dev/tessera` v1.0.2 library  against a local POSIX-backed log.
 
 ## Status: Sprint 1 complete
 
