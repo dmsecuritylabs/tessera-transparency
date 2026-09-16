@@ -40,9 +40,9 @@ import (
 	"github.com/transparency-dev/tessera"
 	"github.com/transparency-dev/tessera/storage/posix"
 
-	"github.com/dmendoza/tessera-transparency/internal/api"
-	"github.com/dmendoza/tessera-transparency/internal/schema"
-	"github.com/dmendoza/tessera-transparency/internal/signer"
+	"github.com/dmsecuritylabs/tessera-transparency/internal/api"
+	"github.com/dmsecuritylabs/tessera-transparency/internal/schema"
+	"github.com/dmsecuritylabs/tessera-transparency/internal/signer"
 )
 
 var (

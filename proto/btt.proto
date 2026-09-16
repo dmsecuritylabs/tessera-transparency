@@ -1,6 +1,6 @@
 syntax = "proto3";
 package transparency;
-option go_package = "github.com/dmendoza/tessera-transparency/internal/schema";
+option go_package = "github.com/dmsecuritylabs/tessera-transparency/internal/schema";
 
 // BinaryEventType distinguishes the two lifecycle events that generate a BTT.
 enum BinaryEventType {

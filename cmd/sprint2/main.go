@@ -38,9 +38,9 @@ import (
 	"github.com/transparency-dev/tessera/client"
 	"github.com/transparency-dev/tessera/storage/posix"
 
-	"github.com/dmendoza/tessera-transparency/internal/schema"
-	"github.com/dmendoza/tessera-transparency/internal/server"
-	"github.com/dmendoza/tessera-transparency/internal/signer"
+	"github.com/dmsecuritylabs/tessera-transparency/internal/api"
+	"github.com/dmsecuritylabs/tessera-transparency/internal/schema"
+	"github.com/dmsecuritylabs/tessera-transparency/internal/signer"
 )
 
 var (
@@ -105,7 +105,7 @@ func main() {
 
 	// ── 5. Start HTTP tile server ─────────────────────────────────────────────
 	if *serveAddr != "" {
-		ts := server.New(*serveAddr, *logDataDir)
+		ts := api.NewServer(*serveAddr, *logDataDir, appender, reader)
 		addr, stopServer, err := ts.Start(ctx)
 		if err != nil {
 			fmt.Printf("[server] WARNING: could not start tile server: %v\n", err)
