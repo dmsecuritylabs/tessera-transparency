@@ -1,0 +1,18 @@
+syntax = "proto3";
+package transparency;
+option go_package = "github.com/dmendoza/tessera-transparency/internal/schema";
+
+// HostTransparencyToken is a post-boot attestation issued by an independent
+// monitoring service. Every field maps to one of the four generalisation
+// framework criteria (C1–C4) defined in Chapter 3.
+message HostTransparencyToken {
+  string  token_id               = 1;  // UUID generated at issuance
+  string  host_id                = 2;  // pseudonymised host identifier
+  string  attestation_service_id = 3;  // issuer distinct from subject (C1)
+  uint64  boot_timestamp_utc     = 4;  // discrete lifecycle event (C2)
+  bytes   tpm_measurement_hash   = 5;  // SHA-256 of TPM quote / PCR values (C3)
+  bytes   baseline_config_hash   = 6;  // SHA-256 of approved config (C3)
+  bool    secure_boot_verified   = 7;  // attestation outcome for verifier (C4)
+  bool    baseline_match         = 8;  // attestation outcome for verifier (C4)
+  bytes   signature              = 9;  // Ed25519 over canonical encoding of fields 1-8
+}

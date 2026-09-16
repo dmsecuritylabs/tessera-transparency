@@ -1,0 +1,23 @@
+syntax = "proto3";
+package transparency;
+option go_package = "github.com/dmendoza/tessera-transparency/internal/schema";
+
+// BinaryEventType distinguishes the two lifecycle events that generate a BTT.
+enum BinaryEventType {
+  BUILD      = 0;  // build provenance event
+  DEPLOYMENT = 1;  // pre-execution verification event
+}
+
+// BinaryTransparencyToken covers both BUILD and DEPLOYMENT events in a single
+// message, allowing one Tessera log and one verifier to serve both event types.
+message BinaryTransparencyToken {
+  string          token_id                   = 1;  // UUID
+  bytes           binary_hash                = 2;  // SHA-256 of binary artefact
+  BinaryEventType event_type                 = 3;  // lifecycle event type (C2)
+  string          issuer_id                  = 4;  // build system or gating service (C1)
+  uint64          event_timestamp            = 5;  // Unix epoch seconds (C2)
+  bytes           source_commit_hash         = 6;  // BUILD only; empty for DEPLOYMENT
+  string          build_provenance_uri       = 7;  // SLSA-format URI (C3)
+  bytes           verification_evidence_hash = 8;  // DEPLOYMENT only (C3)
+  bytes           signature                  = 9;  // Ed25519 over canonical encoding of fields 1-8
+}

@@ -1,0 +1,10 @@
+# Generated log data, keys, and benchmark output
+data/
+
+# Go build artifacts
+*.exe
+*.test
+*.out
+
+# macOS
+.DS_Store
