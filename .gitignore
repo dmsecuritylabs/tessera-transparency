@@ -5,6 +5,12 @@ data/
 *.exe
 *.test
 *.out
+sprint1
+sprint1b
+sprint2
+sprint3
+sprint4
+verify
 
 # macOS
 .DS_Store
