@@ -1,6 +1,6 @@
 syntax = "proto3";
 package transparency;
-option go_package = "github.com/dmendoza/tessera-transparency/internal/schema";
+option go_package = "github.com/dmsecuritylabs/tessera-transparency/internal/schema";
 
 // HostTransparencyToken is a post-boot attestation issued by an independent
 // monitoring service. Every field maps to one of the four generalisation

@@ -12,8 +12,10 @@
 // authenticate tokens consistently across log sessions.
 //
 // Note key format (golang.org/x/mod/sumdb/note):
-//   Private: "PRIVATE+KEY+<name>+<keyid>+<base64(1-byte-type + 32-byte-seed)>"
-//   Public:  "<name>+<keyid>+<base64(1-byte-type + 32-byte-pubkey)>"
+//
+//	Private: "PRIVATE+KEY+<name>+<keyid>+<base64(1-byte-type + 32-byte-seed)>"
+//	Public:  "<name>+<keyid>+<base64(1-byte-type + 32-byte-pubkey)>"
+//
 // Parsing splits the key string using strings.SplitN to preserve any '+' that
 // appear inside the base64 data.
 package signer
@@ -28,7 +30,7 @@ import (
 
 	"golang.org/x/mod/sumdb/note"
 
-	"github.com/dmendoza/tessera-transparency/internal/schema"
+	"github.com/dmsecuritylabs/tessera-transparency/internal/schema"
 )
 
 const keyFileName = "entry-signing-key.txt"

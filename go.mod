@@ -1,4 +1,4 @@
-module github.com/dmendoza/tessera-transparency
+module github.com/dmsecuritylabs/tessera-transparency 
 
 go 1.24.0
 
